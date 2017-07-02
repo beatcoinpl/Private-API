@@ -11,7 +11,8 @@ Get info about your account.
 
 
 example response
-'''
+```
+
 (
     [balance] => stdClass Object
         (
@@ -28,11 +29,10 @@ example response
             [BCN] => 1.00000000
             [ETC] => 0.00000000
         )
-'''
+```
 
 info about your exchange values aviable to withdraw or exchange.
-
-'''
+```
 [BTC] => stdClass Object
                 (
                     [transaction] => Array
@@ -49,7 +49,7 @@ info about your exchange values aviable to withdraw or exchange.
                     [withdrawals] => 1.00000000
                 )
 		
-'''
+```
 
 [withdrawals] - waiting for withdraw
 [amount] - how much amount are you selling
@@ -62,7 +62,7 @@ info about your exchange values aviable to withdraw or exchange.
 wallet - your private, unique addresses to send cryptos on Beatcoin.
 
 
-'''    
+```  
 [wallet] => stdClass Object
         (
             [btc] => 158y1oivbEkde2fu9zpw4G9JYyrL9PC97E
@@ -78,7 +78,7 @@ wallet - your private, unique addresses to send cryptos on Beatcoin.
 
 )
 
-'''
+```
 
 
 
@@ -98,30 +98,29 @@ Use Trade method to make new offer on market.
 
 
 output:
-
-'''
+```
 (
     [error] => 509
     [errorMsg] => Invalid value of the crypto parameter.
 )
-'''
+```
 
 Action cant be done, check your input.
 
-'''
+```
 (
     [error] => 515
     [errorMsg] => You do not have enough funds.
 )
-'''
+```
 
 you try to trade more than you have
 
-'''
+```
 (
     [0] => success
 )
-'''
+```
 Transaction done. 
 
 
@@ -134,22 +133,22 @@ Transaction done.
 ut id of action you want to cancel
 
 Output:
-'''
+```
 (
     [error] => 512
     [errorMsg] => Invalid value of the ID parameter.
 )
-'''
+```
 
 If you dont have transaction with this ID. 
 
 
-'''
+```
 (
     [balance] => 9.70798333
     [currency] => BTC
 )
-'''
+```
 
 
 If cancel is succed you will see your balance. 
@@ -167,7 +166,7 @@ inputs:
  
 
 Output:
-'''
+```
 (
     [start] => 0
     [limit] => 50
@@ -191,7 +190,7 @@ Output:
         )
 
 )
-'''
+```
 
 
 [start] -> number of first transaction (we starting it on 0, 0 is the first your offer)
@@ -217,7 +216,7 @@ offers actually in the market
 Inputs:
 
 
-'''
+```
 [crypto] - > cryptocurrency
 [currency] -> fiat currency
 [type]     -> kind of operation (buy, or sell)
@@ -258,7 +257,7 @@ Inputs:
 		}	
 }
 
-'''
+```
 
 [id]    -> id of offer
 [type]  -> kind of offer
@@ -273,9 +272,9 @@ Inputs:
 
 -----
 ## History 
-
+```
 - temporary unaviable. 
 
 
-
+```
 
