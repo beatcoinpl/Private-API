@@ -1,16 +1,16 @@
-API key - your individual API key, to find in Settings.
-API pin - individual password, to find in Settings.
+* API key - your individual API key, to find in Settings. *
+* API pin - individual password, to find in Settings.*
 
 
 ### Private methods
 
-----
+
 ## Info
 
 Get info about your account. 
 
 
-example response
+output
 ```
 
 (
@@ -126,7 +126,7 @@ Transaction done.
 
 
 
-------
+
 
 ## Cancel
 
@@ -153,7 +153,7 @@ If you dont have transaction with this ID.
 
 If cancel is succed you will see your balance. 
 
------
+
 
 ##Orders
 
@@ -209,7 +209,7 @@ totalCurrency]-> currency of total (belong of market you used)
 ```
 
 
------
+
 
 ## Trades 
 offers actually in the market
@@ -271,11 +271,10 @@ Inputs:
 [datatime] 	   -> data, and the time 
 ```
 
------
+
 ## History 
 ```
 - temporary unaviable. 
-
 
 ```
 
