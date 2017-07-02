@@ -9,10 +9,10 @@
 
 ## All methods
 ```
-info - Get info about your account. 
-trade - Use Trade method to make a new offer on market. 
-trades - See your active orders in specify markets
-orders -  See all active orders in specify markets
+info - get info about your account. 
+trade - use Trade method to make a new offer on market. 
+trades - see your active orders in specify markets
+orders -  see all active orders in specify markets
 cancel - put id of action you want to cancel 
 history - history of orders
 ```
@@ -45,7 +45,7 @@ output
         )
 ```
 
-info about your available balance that you can withdraw or exchange.
+Info about your available balance that you can withdraw or exchange.
 ```
 [BTC] => stdClass Object
                 (
@@ -128,7 +128,7 @@ Action can't be done, check your input.
 )
 ```
 
-you are trying trade more than you have!
+You are trying trade more than you have!
 
 ```
 (
@@ -144,7 +144,7 @@ Transaction has been placed successfully
 
 ## Cancel
 
-put id of action you want to cancel
+Put id of action you want to cancel
 
 Output:
 ```
