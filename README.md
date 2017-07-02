@@ -1,8 +1,8 @@
-* API key - your individual API key, to find in Settings. *
-* API pin - individual password, to find in Settings.*
+* API key - your individual API key, to find in Settings. 
+* API pin - individual password, to find in Settings.
 
 
-### Private methods
+## Private methods
 
 
 ## Info
@@ -155,7 +155,7 @@ If cancel is succed you will see your balance.
 
 
 
-##Orders
+## Orders
 
 See your active orders in specify markets
 
