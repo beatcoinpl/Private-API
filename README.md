@@ -50,7 +50,7 @@ info about your exchange values aviable to withdraw or exchange.
                 )
 		
 ```
-
+```
 [withdrawals] - waiting for withdraw
 [amount] - how much amount are you selling
 [price_amount] - price of 1 unit of selling
@@ -58,7 +58,7 @@ info about your exchange values aviable to withdraw or exchange.
 [id_action] 1 - standard buy/sell
 [id_action] 2 - quick buy/sell
 [id_action] 3 - Bot buy/sell
-
+```
 wallet - your private, unique addresses to send cryptos on Beatcoin.
 
 
@@ -89,13 +89,13 @@ wallet - your private, unique addresses to send cryptos on Beatcoin.
 
 Use Trade method to make new offer on market. 
 
-
+```
 [crypto] -> give which one crypto you want to trade
 [currency] -> give which one currency want to trade (include BTC in markets BTC -> other cryptos)
 [amount]  -> amount in crypto, which you want to buy or sell
 [price]  -> price in currency, which you want to buy, or sell
 [type]   -> type of action, buy, or sell
-
+```
 
 output:
 ```
@@ -130,7 +130,7 @@ Transaction done.
 
 ## Cancel
 
-ut id of action you want to cancel
+put id of action you want to cancel
 
 Output:
 ```
@@ -160,10 +160,11 @@ If cancel is succed you will see your balance.
 See your active orders in specify markets
 
 inputs:
+```
 [crypto] - > cryptocurrency
 [currency] -> fiat currency
 [type]     -> kind of operation (buy, or sell)
- 
+ ```
 
 Output:
 ```
@@ -192,7 +193,7 @@ Output:
 )
 ```
 
-
+```
 [start] -> number of first transaction (we starting it on 0, 0 is the first your offer)
 [limit] -> your limit of number of transactions to see
 [total] -> count of your transactions
@@ -205,7 +206,7 @@ Output:
 [total]        -> its total value of offer
 totalCurrency]-> currency of total (belong of market you used)
 [datatime] 	   -> data, and the time 
-
+```
 
 
 -----
@@ -258,7 +259,7 @@ Inputs:
 }
 
 ```
-
+```
 [id]    -> id of offer
 [type]  -> kind of offer
 [who]   -> user, bot, or express - its kind of listed transaction. You can see only user transactions if it is not your transaction.
@@ -268,7 +269,7 @@ Inputs:
 [total]        -> its total value of offer
 [totalCurrency]-> currency of total (belong of market you used)
 [datatime] 	   -> data, and the time 
-
+```
 
 -----
 ## History 
