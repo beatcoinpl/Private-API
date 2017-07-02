@@ -1,8 +1,24 @@
 * API key - your individual API key, to find in Settings. 
 * API pin - individual password, to find in Settings.
+* Methods are bolded, and listed in All methods you can use it
+* URL to API is [ https://beatcoin.pl/api ] 
 
 
-## Private methods
+### Private API methods
+
+
+## All methods
+```
+info - Get info about your account. 
+trade - Use Trade method to make new offer on market. 
+trades - See your active orders in specify markets
+orders -  See your active orders in specify markets
+cancel - put id of action you want to cancel 
+history - history of orders
+
+
+```
+
 
 
 ## Info
