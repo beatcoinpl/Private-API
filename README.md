@@ -2,7 +2,7 @@ API key - your individual API key, to find in Settings.
 API pin - individual password, to find in Settings.
 
 
-###Private methods
+### Private methods
 
 ----
 ## Info
@@ -11,7 +11,8 @@ Get info about your account.
 
 
 example response
-'''(
+'''
+(
     [balance] => stdClass Object
         (
             [PLN] => 3000.05
@@ -31,7 +32,7 @@ example response
 
 info about your exchange values aviable to withdraw or exchange.
 
-
+'''
 [BTC] => stdClass Object
                 (
                     [transaction] => Array
@@ -47,6 +48,8 @@ info about your exchange values aviable to withdraw or exchange.
 
                     [withdrawals] => 1.00000000
                 )
+		
+'''
 
 [withdrawals] - waiting for withdraw
 [amount] - how much amount are you selling
@@ -59,7 +62,8 @@ info about your exchange values aviable to withdraw or exchange.
 wallet - your private, unique addresses to send cryptos on Beatcoin.
 
 
-'''    [wallet] => stdClass Object
+'''    
+[wallet] => stdClass Object
         (
             [btc] => 158y1oivbEkde2fu9zpw4G9JYyrL9PC97E
             [ltc] => LaVKJY8rE4Hex63LpnxCcNdr6EyMiB4m2w
@@ -72,7 +76,9 @@ wallet - your private, unique addresses to send cryptos on Beatcoin.
             [bcn] => 25FKrrkkub8DUVpyVryhQh8iVWMrBwLSHccYNEBAg79wFv217GnpBgS3LcdE6wvsXmQnGzx5XDuQSjhtgwcXLTCC6sESMNq
         )
 
-)'''
+)
+
+'''
 
 
 
@@ -93,21 +99,26 @@ Use Trade method to make new offer on market.
 
 output:
 
-'''(
+'''
+(
     [error] => 509
     [errorMsg] => Invalid value of the crypto parameter.
-)'''
+)
+'''
 
 Action cant be done, check your input.
 
-'''(
+'''
+(
     [error] => 515
     [errorMsg] => You do not have enough funds.
-)'''
+)
+'''
 
 you try to trade more than you have
 
-'''(
+'''
+(
     [0] => success
 )
 '''
@@ -123,18 +134,22 @@ Transaction done.
 ut id of action you want to cancel
 
 Output:
-'''(
+'''
+(
     [error] => 512
     [errorMsg] => Invalid value of the ID parameter.
-)'''
+)
+'''
 
 If you dont have transaction with this ID. 
 
 
-'''(
+'''
+(
     [balance] => 9.70798333
     [currency] => BTC
-)'''
+)
+'''
 
 
 If cancel is succed you will see your balance. 
@@ -196,7 +211,7 @@ totalCurrency]-> currency of total (belong of market you used)
 
 -----
 
-##Trades 
+## Trades 
 offers actually in the market
 
 Inputs:
@@ -243,6 +258,7 @@ Inputs:
 		}	
 }
 
+'''
 
 [id]    -> id of offer
 [type]  -> kind of offer
@@ -253,7 +269,7 @@ Inputs:
 [total]        -> its total value of offer
 [totalCurrency]-> currency of total (belong of market you used)
 [datatime] 	   -> data, and the time 
-'''
+
 
 -----
 ## History 
