@@ -9,8 +9,8 @@
 
 ## All methods
 ```
-info - get info about your account. 
-trade - use Trade method to make a new offer on market. 
+info - get info about your account
+trade - use Trade method to make a new offer on market
 trades - see your active orders in specify markets
 orders -  see all active orders in specify markets
 cancel - put id of action you want to cancel 
