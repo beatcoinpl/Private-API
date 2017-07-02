@@ -4,7 +4,7 @@
 * API URL is https://beatcoin.pl/api 
 
 
-### Private API methods
+# Private API methods
 
 
 ## All methods
