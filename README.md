@@ -1,7 +1,7 @@
-* API key - your individual API key, to find in Settings. 
-* API pin - individual password, to find in Settings.
-* Methods are bolded, and listed in All methods you can use it
-* URL to API is [ https://beatcoin.pl/api ] 
+* API key - your individual API key, you can find it in Settings. 
+* API pin - individual password, you can find it in Settings.
+* Methods are bolded and listed below in All methods.
+* API URL is https://beatcoin.pl/api 
 
 
 ### Private API methods
@@ -10,13 +10,11 @@
 ## All methods
 ```
 info - Get info about your account. 
-trade - Use Trade method to make new offer on market. 
+trade - Use Trade method to make a new offer on market. 
 trades - See your active orders in specify markets
-orders -  See your active orders in specify markets
+orders -  See all active orders in specify markets
 cancel - put id of action you want to cancel 
 history - history of orders
-
-
 ```
 
 
@@ -47,7 +45,7 @@ output
         )
 ```
 
-info about your exchange values aviable to withdraw or exchange.
+info about your available balance that you can withdraw or exchange.
 ```
 [BTC] => stdClass Object
                 (
@@ -68,8 +66,8 @@ info about your exchange values aviable to withdraw or exchange.
 ```
 ```
 [withdrawals] - waiting for withdraw
-[amount] - how much amount are you selling
-[price_amount] - price of 1 unit of selling
+[amount] - what amount you want to trade
+[price_amount] - exchange rate
 [total] = amount * price_amount 
 [id_action] 1 - standard buy/sell
 [id_action] 2 - quick buy/sell
@@ -103,14 +101,14 @@ wallet - your private, unique addresses to send cryptos on Beatcoin.
 
 ## Trade
 
-Use Trade method to make new offer on market. 
+Use Trade methods to make a new offer on market. 
 
 ```
-[crypto] -> give which one crypto you want to trade
-[currency] -> give which one currency want to trade (include BTC in markets BTC -> other cryptos)
-[amount]  -> amount in crypto, which you want to buy or sell
-[price]  -> price in currency, which you want to buy, or sell
-[type]   -> type of action, buy, or sell
+[crypto] -> type crypto you want to trade
+[currency] -> type currency you want to trade (includes BTC in markets BTC -> other cryptos)
+[amount]  -> amount of crypto that you want to buy or sell
+[price]  -> price of "currency" which you want to buy or sell
+[type]   -> type of action: buy or sell
 ```
 
 output:
@@ -121,7 +119,7 @@ output:
 )
 ```
 
-Action cant be done, check your input.
+Action can't be done, check your input.
 
 ```
 (
@@ -130,14 +128,14 @@ Action cant be done, check your input.
 )
 ```
 
-you try to trade more than you have
+you are trying trade more than you have!
 
 ```
 (
     [0] => success
 )
 ```
-Transaction done. 
+Transaction has been placed successfully 
 
 
 
@@ -156,7 +154,7 @@ Output:
 )
 ```
 
-If you dont have transaction with this ID. 
+You don't have transaction with this ID. 
 
 
 ```
@@ -167,7 +165,7 @@ If you dont have transaction with this ID.
 ```
 
 
-If cancel is succed you will see your balance. 
+If you see your balance, the order was successfully canceled
 
 
 
@@ -179,7 +177,7 @@ inputs:
 ```
 [crypto] - > cryptocurrency
 [currency] -> fiat currency
-[type]     -> kind of operation (buy, or sell)
+[type]     -> type of operation (buy, or sell)
  ```
 
 Output:
@@ -210,17 +208,17 @@ Output:
 ```
 
 ```
-[start] -> number of first transaction (we starting it on 0, 0 is the first your offer)
-[limit] -> your limit of number of transactions to see
-[total] -> count of your transactions
-[id]    -> id of your offer
-[type]  -> kind of your offer
-[who]   -> user, bot, or express - its kind of your listed transaction.
+[start] -> number of first transaction (we start with 0, 0 is your first offer)
+[limit] -> limit of transaction that you can maximally see
+[total] -> counter of your transactions
+[id]    -> your offer ID
+[type]  -> type of your offer
+[who]   -> user, bot, or express - it is type of your listed transaction.
 [cryptoAmount] -> amount of crypto you offer
-[mainAmount]   -> amount of currency fiat you offer
+[mainAmount]   -> amount of fiat currency you offer
 [mainCurrency] -> fiat currency (PLN, EUR, USD, or BTC)
-[total]        -> its total value of offer
-totalCurrency]-> currency of total (belong of market you used)
+[total]        -> it is total value of your offer
+[totalCurrency]-> amount of total (concerns the market you have chosen)
 [datatime] 	   -> data, and the time 
 ```
 
@@ -228,7 +226,7 @@ totalCurrency]-> currency of total (belong of market you used)
 
 
 ## Trades 
-offers actually in the market
+All active offers on the exchange
 
 Inputs:
 
@@ -236,7 +234,7 @@ Inputs:
 ```
 [crypto] - > cryptocurrency
 [currency] -> fiat currency
-[type]     -> kind of operation (buy, or sell)
+[type]     -> type of operation (buy, or sell)
 
 (
     [start] => 0
@@ -276,14 +274,14 @@ Inputs:
 
 ```
 ```
-[id]    -> id of offer
-[type]  -> kind of offer
-[who]   -> user, bot, or express - its kind of listed transaction. You can see only user transactions if it is not your transaction.
-[cryptoAmount] -> amount of crypto offered on market
-[mainAmount]   -> amount of currency fiat offered
+[id]    -> offer ID
+[type]  -> type of offer
+[who]   -> user, bot, or express - it is a type of listed transaction. You can see only 'user' transactions if it is not your transaction.
+[cryptoAmount] -> amount of crypto offered on the exchange
+[mainAmount]   -> amount of currency fiat offered on the exchange
 [mainCurrency] -> fiat currency (PLN, EUR, USD, or BTC)
-[total]        -> its total value of offer
-[totalCurrency]-> currency of total (belong of market you used)
+[total]        -> it is a total value of offer
+[totalCurrency]-> amount of total (concerns the market you have chosen)
 [datatime] 	   -> data, and the time 
 ```
 
