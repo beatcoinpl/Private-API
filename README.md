@@ -1,7 +1,51 @@
+Beatcoin.pl private API v1.0.0.1 
+
 * API key - your individual API key, you can find it in Settings. 
 * API pin - individual password, you can find it in Settings.
 * Methods are bolded and listed below in All methods.
 * API URL is https://beatcoin.pl/api 
+* API method is POST. 
+* Remember to use SHA512! 
+
+PHP configuration example:
+```
+<?php
+ 
+ 
+function BeatCoin_Api($method, $params = array())
+{
+    $key = "123";
+    $secret = "321";
+ 
+    $params["method"] = $method;
+    $params["time"] = time();
+ 
+    $post = http_build_query($params, "", "&");
+    $sign = hash_hmac("sha512", $post, $secret);
+    $headers = array(
+        "key: " . $key,
+        "hash: " . $sign,
+    );
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_URL, "https://beatcoin.pl/api/");
+    curl_setopt($curl, CURLOPT_POST, true);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    $result = curl_exec($curl);
+    $result = json_decode($result);
+ 
+    if(!empty($result->error)){
+        // Error code: $result->error
+        // Error message: $result->errorMsg
+    }
+ 
+    return $ret;
+}
+?>
+
+```
+
 
 
 # Private API methods
@@ -288,6 +332,28 @@ Inputs:
 
 ## History 
 ```
-- temporary unaviable. 
+input:
+ 
+    currency - main currency (PLN/BTC/EUR/USD/ETH* )
+ 
+    crypto - second currency 
+ 
+    type - sell/buy
+ 
+ 
+ 
+output:
+ 
+   Result: 
+ 
+        datetime - time of transaction
+        type - buy / sell
+        cryptoAmount - amount of transaction
+        cryptoCurrency - cryptocurrency
+        mainAmount - price
+        mainCurrency - currency of price
+        total - summary
 
+
+*ETH will be available soon! 
 ```
