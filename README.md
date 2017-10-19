@@ -58,7 +58,8 @@ trade - use Trade method to make a new offer on market
 trades - see your active orders in specify markets
 orders -  see all active orders in specify markets
 cancel - put id of action you want to cancel 
-history - history of orders
+history - history of user orders
+markethistory - history of market orders
 ```
 
 
@@ -331,8 +332,10 @@ Inputs:
 
 
 ## History 
-```
+
 use "/history" 
+
+```
 input:
  
     currency - main currency (PLN/BTC/EUR/USD/ETH* )
@@ -344,8 +347,7 @@ You can input only one currency, but you dont have to. (for example only PLN, or
  
  ```
 output:
- 
-   Result: 
+  
  
         datetime - time of transaction
         cryptoAmount - amount of transaction
@@ -367,9 +369,9 @@ use "/markethistory"
     crypto - second currency 
     limit - max 800, minimum 2
     since - tid of transaction it starts with transaction you gave +1 
-
-You can input only one currency, but you dont have to. (for example only 
  ```
+You can input only one currency, but you dont have to. (for example only 
+
  ```
 output:
  
