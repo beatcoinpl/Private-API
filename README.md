@@ -337,9 +337,7 @@ input:
     currency - main currency (PLN/BTC/EUR/USD/ETH* )
  
     crypto - second currency 
- 
-    type - sell/buy
- 
+  
  
  
 output:
@@ -347,7 +345,6 @@ output:
    Result: 
  
         datetime - time of transaction
-        type - buy / sell
         cryptoAmount - amount of transaction
         cryptoCurrency - cryptocurrency
         mainAmount - price
