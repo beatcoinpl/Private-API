@@ -5,7 +5,8 @@ Beatcoin.pl private API v1.0.0.1
 * Methods are bolded and listed below in All methods.
 * API URL is https://beatcoin.pl/api 
 * API method is POST. 
-* Remember to use SHA512! 
+* Remember to use SHA512!
+* API is limited: 1 req/s.  
 
 PHP configuration example:
 ```
