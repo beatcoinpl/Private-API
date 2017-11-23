@@ -41,7 +41,7 @@ function BeatCoin_Api($method, $params = array())
         // Error message: $result->errorMsg
     }
  
-    return $ret;
+    return $result;
 }
 ?>
 
@@ -57,7 +57,7 @@ function BeatCoin_Api($method, $params = array())
 info - get info about your account
 trade - use Trade method to make a new offer on market
 trades - see your active orders in specify markets
-orders -  see all active orders in specify markets
+orders -  see all active in specify markets
 cancel - put id of action you want to cancel 
 history - history of user orders
 markethistory - history of market orders
@@ -217,7 +217,7 @@ If you see your balance, the order was successfully canceled
 
 ## Orders
 
-See your active orders in specify markets
+See all active orders in specify markets
 
 inputs:
 ```
