@@ -342,6 +342,7 @@ input:
     currency - main currency (PLN/BTC/EUR/USD/ETH* )
     crypto - second currency 
     limit - max 800, minimum 2
+    type - sell, or buy
     since - tid of transaction it starts with transaction you gave +1 
 ```
 You can input only one currency, but you dont have to. (for example only PLN, or only BTC) 
