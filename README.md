@@ -6,7 +6,8 @@ Beatcoin.pl private API v1.0.0.1
 * API URL is https://beatcoin.pl/api 
 * API method is POST. 
 * Remember to use SHA512!
-* API is limited: 1 req/s.  
+* API is limited: 1 req/2s.  
+* if you see error 429 - please slow down ;-) It means, that your script is using too many requests! 
 
 PHP configuration example:
 ```
