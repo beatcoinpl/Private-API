@@ -1,9 +1,9 @@
-Beatcoin.pl private API v1.0.0.1 
+coinbe.net private API v1.0.0.1 
 
 * API key - your individual API key, you can find it in Settings. 
 * API pin - individual password, you can find it in Settings.
 * Methods are bolded and listed below in All methods.
-* API URL is https://beatcoin.pl/api 
+* API URL is https://coinbe.net/api 
 * API method is POST. 
 * Remember to use SHA512!
 * API is limited: 1 req/2s.  
@@ -14,7 +14,7 @@ PHP configuration example:
 <?php
  
  
-function BeatCoin_Api($method, $params = array())
+function Coinbe_Api($method, $params = array())
 {
     $key = "123";
     $secret = "321";
@@ -30,7 +30,7 @@ function BeatCoin_Api($method, $params = array())
     );
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($curl, CURLOPT_URL, "https://beatcoin.pl/api/");
+    curl_setopt($curl, CURLOPT_URL, "https://coinbe.net/api/");
     curl_setopt($curl, CURLOPT_POST, true);
     curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -120,7 +120,7 @@ Info about your available balance that you can withdraw or exchange.
 [id_action] 2 - quick buy/sell
 [id_action] 3 - Bot buy/sell
 ```
-wallet - your private, unique addresses to send cryptos on Beatcoin.
+wallet - your private, unique addresses to send cryptos on Coinbe.
 
 
 ```  
@@ -156,6 +156,7 @@ Use Trade methods to make a new offer on market.
 [amount]  -> amount of crypto that you want to buy or sell
 [price]  -> price of "currency" which you want to buy or sell
 [type]   -> type of action: buy or sell
+[action] -> standard (its mandatory and prepared for trade methods) 
 ```
 
 output:
