@@ -6,9 +6,9 @@ coinbe.net private API v1.0.0.1
 * API URL is https://coinbe.net/api 
 * API method is POST. 
 * Remember to use SHA512!
-* API is limited: 1 req/2s.  
-* if you see error 429 - please slow down ;-) It means, that your script is using too many requests! 
-
+* API #GET methods are limited to 1request / 200ms
+* API #SET methods are limited to 1request / 2s
+* if you see error 429 - please slow down ;-) It means, that your script is using too many requests!
 PHP configuration example:
 ```
 <?php
@@ -44,10 +44,46 @@ function Coinbe_Api($method, $params = array())
  
     return $result;
 }
+
+$info = Coinbe_Api("info");
+var_dump($info->balance);
 ?>
 
-```
 
+```
+PYTHON 3.6 configuration example:
+```
+import time
+import hmac
+import hashlib
+import requests
+import json
+
+
+key = 'apiKey';
+secret = b'secret';
+timeError = 0; #change this parameter, if you got 504 error
+
+
+def Coinbe_Api( method, params ):
+	params['method']=method
+	params['time']=str(int(time.time())+timeError)
+	tosign = "&".join( [i + '=' + params[i] for i in params] ).encode('utf-8')
+	sign = hmac.new(secret, tosign, hashlib.sha512)
+	headers = {'hash': sign.hexdigest(), 'key': key }
+	result = requests.post("https://coinbe.net/api", data=params, headers=headers).json()
+	if "error" in result:
+		# Error code: result["error"]
+		# Error message: result["errorMsg"]
+		print(result)
+		exit()
+	return result
+
+
+info = Coinbe_Api("info",{})
+
+print(info["balance"])
+```
 
 
 # Private API methods
@@ -55,13 +91,14 @@ function Coinbe_Api($method, $params = array())
 
 ## All methods
 ```
-info - get info about your account
-trade - use Trade method to make a new offer on market
-trades - see your active orders in specify markets
-orders -  see all active in specify markets
-cancel - put id of action you want to cancel 
-history - history of user orders
-markethistory - history of market orders
+info - get info about your account #SET
+trade - use Trade method to make a new offer on market #SET
+trades - see your active orders in specify markets #GET
+orders -  see all active in specify markets #GET
+cancel - put id of action you want to cancel  #SET
+history - history of user orders #GET
+markethistory - history of market orders #GET
+time - check time server #GET
 ```
 
 
@@ -180,7 +217,12 @@ You are trying trade more than you have!
 
 ```
 (
-    [0] => success
+    [status] => success
+    [info] =>  Array
+        (
+	    [transactions] => Array with details of offers, which interaction has begun. 
+            [market] => Information about your interaction with market, or "false" if nothing happened
+        )
 )
 ```
 Transaction has been placed successfully 
@@ -374,7 +416,7 @@ use "/markethistory"
     limit - max 800, minimum 2
     since - tid of transaction it starts with transaction you gave +1 
  ```
-You can input only one currency, but you dont have to. (for example only 
+You can input only one currency, but you dont have to. (for example only )
 
  ```
 output:
@@ -389,5 +431,24 @@ output:
         total - summary
 
 
-*ETH will be available soon! 
+```
+
+
+## Time
+
+use "/time" 
+
+Check server time
+
+ ```
+output:
+ 
+   Result: 
+ 
+        status - success
+        timestamp - UNIX Server Time
+        datetime - human readable time format Y-m-d H:i:s
+        tolerance - diffrence in time, which is acceptable by our API (+/-)
+
+
 ```
