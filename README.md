@@ -9,6 +9,7 @@ coinbe.net private API v1.0.0.1
 * API #GET methods are limited to 1request / 200ms
 * API #SET methods are limited to 1request / 2s
 * if you see error 429 - please slow down ;-) It means, that your script is using too many requests!
+
 PHP configuration example:
 ```
 <?php
